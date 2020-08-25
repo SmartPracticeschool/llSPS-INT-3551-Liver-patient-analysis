@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Liver Patient Analysis</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<style>
+.login{
+top: 20%;
+}
+</style>
+<style>
+html{
+-webkit-background-size:cover;
+-moz-background-size:cover;
+-o-background-size:cover;
+background-size:cover
+}
+</style>
+</head>
+
+<body bgcolor="Sky Blue">
+ <div class="login">
+<br>
+<br>
+<h2 style="color:white;"><i><font size="12">L</font>iver <font size="12">P</font>atient <font size="12">A</font>nalysis </i></h2>	
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('y_predict')}}"method="post">
+<p><h2 style="color:orange" valign="center">Liver Disease Confirmed!!!</h2></p><br>
+
+    </form>
+<h2>
+   <p><h3><mark>Around 10 lakh patients of liver cirrhosis are newly diagnosed every year in India. Liver disease is the tenth most common cause of death in India as per the WHO </mark></h3></p>
+   <br><p><h3 style="color:white">Project members:<br> Indhumadhi.K <br>
+                                            Dharsini Prabha.K <br>
+                                            Bagavathi@Bavatharani.S</h3></p>
+</div>
+<h2 style="color: red;"><marquee><i>Patients with Liver disease have been continously increasing because of excessive consumption of alcohol, inhale of harmful gases, intake of contaminated food, pickles and drugs. The dataset was used to evaluate prediction algorithms in an effort to reduce burden on doctors.</i></marquee></h2><br>
+
+</font></style></body>
+</body>
+
+</html>
+
