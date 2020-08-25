@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Liver Patient Analysis</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
+<style>
+.login{
+top: 30%;
+}
+</style>
+<style>
+html{
+-webkit-background-size:cover;
+-moz-background-size:cover;
+-o-background-size:cover;
+background-size:cover
+}
+</style>
+</head>
+
+<body bgcolor="Sky blue">
+ <div class="login">
+	<h2 style="color:white;"><i><font size="12">L</font>iver <font size="12">P</font>atient <font size="12">A</font>nalysis </i></h2>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('y_predict')}}"method="post">
+    	<input type="text" name="Gender" placeholder="Gender" required="required"  class="btn btn-primary btn-block btn-small" />
+        <input type="text" name="Age" placeholder="Age" required="required" class="btn btn-primary btn-block btn-small"/>
+		<input type="text" name="Total_Bilirubin" placeholder="Total-Bilirubin" required="required" class="btn btn-primary btn-block btn-small"/>
+<input type="text" name="Direct_Bilirubin" placeholder="Direct-Bilirubin" required="required" class="btn btn-primary btn-block btn-small"/>
+        <input type="text" name="Alkaline_Phosphatase" placeholder="Alkaline_Phosphatase" required="required" class="btn btn-primary btn-block btn-small"/>
+		<input type="text" name="Alamine_Aminotransferase" placeholder="Alamine_Aminotransferase" required="required" class="btn btn-primary btn-block btn-small"/>
+    	<input type="text" name="Aspartate_Aminotransferese" placeholder="Aspartate_Aminotransferese" required="required" class="btn btn-primary btn-block btn-small"/>
+        <input type="text" name="Total_proteins" placeholder="Total_proteins" required="required" class="btn btn-primary btn-block btn-small"/>
+		<input type="text" name="Albumin" placeholder="Albumin" required="required" class="btn btn-primary btn-block btn-small"/>
+<input type="text" name="Albumin and Globulin ratio" placeholder="Albumin and Globulin ratio" required="required" class="btn btn-primary btn-block btn-small"/><br>
+
+		<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+<h2 style="color: red;"><marquee><i>Patients with Liver disease have been continously increasing because of excessive consumption of alcohol, inhale of harmful gases, intake of contaminated food, pickles and drugs. The dataset was used to evaluate prediction algorithms in an effort to reduce burden on doctors.</i></marquee></h2>
+</font></style></body>
+</html>
